@@ -16,15 +16,15 @@ import TMDBSwift
 class MainViewController: UITableViewController {
 
     @IBOutlet weak var searchBarButton :UIBarButtonItem!
-    private let disposeBag = DisposeBag()
-    private let averageVoteRef = 5.0
-    private var originalDataSource = [MovieMDB]() {
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let averageVoteRef = 5.0
+    fileprivate var originalDataSource = [MovieMDB]() {
         didSet{
             filteredDataSource = Variable(originalDataSource)
         }
     }
     
-    private var filteredDataSource: Variable<[MovieMDB]> = Variable([])
+    fileprivate var filteredDataSource: Variable<[MovieMDB]> = Variable([])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,38 +58,8 @@ class MainViewController: UITableViewController {
         bindTableViewSelected()
         bindSearchButtonTap()
     }
-    
-    private func bindTableView() {
-        
-        filteredDataSource.asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
-                
-                cell.textLabel?.text = element.title
-                
-            }.addDisposableTo(disposeBag)
-    }
-    
-    private func bindTableViewSelected() {
-        
-        tableView
-            .rx
-            .modelSelected(MovieMDB.self)
-            .subscribe(onNext :{ [weak self] model in
-                
-                guard let strongSelf = self else { return }
-                
-                guard let movieDetailViewController = strongSelf.storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController else {
-                    fatalError("MovieDetailViewController not found")
-                }
-                
-                movieDetailViewController.setModel(model)
-                
-                strongSelf.navigationController?.pushViewController(movieDetailViewController, animated: true)
-                
-            }).addDisposableTo(disposeBag)
-    }
 
-    private func filterTableView(text: String) {
+    fileprivate func filterTableView(text: String) {
         
         if (text.isEmpty) {
             self.filteredDataSource.value = originalDataSource
@@ -97,8 +67,13 @@ class MainViewController: UITableViewController {
             self.filteredDataSource.value = originalDataSource.filter({($0.title ?? String.Empty).lowercased().contains(text.lowercased()) })
         }
     }
+}
+
+extension MainViewController {
     
-    private func bindSearchButtonTap() {
+    //Binders
+    
+    fileprivate func bindSearchButtonTap() {
         self.searchBarButton.rx.tap
             .throttle(0.5, latest: false, scheduler: MainScheduler.instance)
             .subscribe { [weak self] _ in
@@ -121,6 +96,36 @@ class MainViewController: UITableViewController {
                 strongSelf.navigationController?.pushViewController(searchViewController, animated: true)
                 
             }.addDisposableTo(disposeBag)
+    }
+    
+    fileprivate func bindTableView() {
+        
+        filteredDataSource.asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
+                
+                cell.textLabel?.text = element.title
+                
+            }.addDisposableTo(disposeBag)
+    }
+    
+    fileprivate func bindTableViewSelected() {
+        
+        tableView
+            .rx
+            .modelSelected(MovieMDB.self)
+            .subscribe(onNext :{ [weak self] model in
+                
+                guard let strongSelf = self else { return }
+                
+                guard let movieDetailViewController = strongSelf.storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController else {
+                    fatalError("MovieDetailViewController not found")
+                }
+                
+                movieDetailViewController.setModel(model)
+                
+                strongSelf.navigationController?.pushViewController(movieDetailViewController, animated: true)
+                
+            }).addDisposableTo(disposeBag)
     }
 }
 

@@ -22,8 +22,6 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="XQk-zw-l4n" kind="relationship" relationship="rootViewController" id="VWx-uz-zzJ"/>
-                        <segue destination="dLV-mk-ncM" kind="show" id="gaA-TO-rdw"/>
-                        <segue destination="mGv-fP-rpf" kind="show" id="NFq-is-EIy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AvR-Fs-Hto" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,13 +41,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nNU-bh-q3k">
-                                <rect key="frame" x="16" y="80" width="343" height="30"/>
+                                <rect key="frame" x="16" y="36" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHJ-Ai-erT">
-                                <rect key="frame" x="16" y="126" width="343" height="40"/>
+                                <rect key="frame" x="16" y="82" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.90421545389278091" green="0.9073937204339374" blue="0.9169285200574071" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eSF-6h-hUZ"/>
@@ -60,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NO-sS-wlD">
-                                <rect key="frame" x="16" y="182" width="343" height="40"/>
+                                <rect key="frame" x="16" y="138" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.90421545390000002" green="0.90739372039999999" blue="0.91692852010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="krQ-Sg-mD1"/>
@@ -85,14 +83,13 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchUITextField" destination="nNU-bh-q3k" id="jGU-4C-OXe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMd-Lt-L80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160.8" y="-213.64317841079463"/>
+            <point key="canvasLocation" x="1074" y="1031"/>
         </scene>
         <!--Upcoming Movies-->
         <scene sceneID="Hmx-7t-6Aa">
@@ -126,7 +123,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1W-kC-3dt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="918"/>
+            <point key="canvasLocation" x="137" y="1031"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="V4D-qJ-NiF">
@@ -160,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSV-67-HFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="501"/>
+            <point key="canvasLocation" x="605" y="1031"/>
         </scene>
     </scenes>
 </document>
