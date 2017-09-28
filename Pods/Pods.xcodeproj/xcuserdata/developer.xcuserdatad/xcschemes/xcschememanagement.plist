@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-hkExemplareTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RxCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -43,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>AB043A618E59D2C861161EAD28719277</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F34050D1AF91DCB33CBF5274BFF32ABB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
