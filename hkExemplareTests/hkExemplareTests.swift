@@ -13,23 +13,37 @@ class hkExemplareTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let expectationResult = expectation(description: "Connect to server...")
+        
+        Api.getMovies { (response) in
+            switch response {
+            case .sucess(let source):
+                if source.value.count > 0 {
+                    expectationResult.fulfill()
+                } else {
+                    XCTFail("No results found.")
+                }
+                break
+            case .error(let reason):
+                 XCTFail("No results found. \(reason)")
+                break
+            }
+        }
+        
+        waitForExpectations(timeout: 10, handler: nil)
     }
     
     func testPerformanceExample() {
-        // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            self.testExample()
         }
     }
     
