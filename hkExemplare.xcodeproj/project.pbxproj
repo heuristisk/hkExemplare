@@ -10,6 +10,7 @@
 		317341B17E0E9DC48F844D82 /* Pods_hkExemplareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E198E9D19F4F2F1434AB3EC /* Pods_hkExemplareTests.framework */; };
 		8B0C3D151F7C71E300DA3DB7 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0C3D141F7C71E300DA3DB7 /* Cache.swift */; };
 		8B0C3D171F7C84B500DA3DB7 /* MovieMDBCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0C3D161F7C84B500DA3DB7 /* MovieMDBCacheable.swift */; };
+		8B0C3D1B1F7C939E00DA3DB7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0C3D1A1F7C939E00DA3DB7 /* Config.swift */; };
 		8B40A0B71F7B1CFC00AF3B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40A0B61F7B1CFC00AF3B06 /* AppDelegate.swift */; };
 		8B40A0B91F7B1CFC00AF3B06 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B40A0B81F7B1CFC00AF3B06 /* MainViewController.swift */; };
 		8B40A0BC1F7B1CFC00AF3B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B40A0BA1F7B1CFC00AF3B06 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		742786B8A7269B9108E3235B /* Pods-hkExemplareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hkExemplareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hkExemplareTests/Pods-hkExemplareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B0C3D141F7C71E300DA3DB7 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		8B0C3D161F7C84B500DA3DB7 /* MovieMDBCacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieMDBCacheable.swift; path = cache/MovieMDBCacheable.swift; sourceTree = "<group>"; };
+		8B0C3D1A1F7C939E00DA3DB7 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = networking/Config.swift; sourceTree = "<group>"; };
 		8B40A0B31F7B1CFC00AF3B06 /* hkExemplare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hkExemplare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B40A0B61F7B1CFC00AF3B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B40A0B81F7B1CFC00AF3B06 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				8B40A0DA1F7B2BA400AF3B06 /* Api.swift */,
+				8B0C3D1A1F7C939E00DA3DB7 /* Config.swift */,
 			);
 			name = networking;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			files = (
 				8B40A0E21F7B3F7200AF3B06 /* String.swift in Sources */,
 				8B40A0E41F7B432500AF3B06 /* SearchViewController.swift in Sources */,
+				8B0C3D1B1F7C939E00DA3DB7 /* Config.swift in Sources */,
 				8B0C3D151F7C71E300DA3DB7 /* Cache.swift in Sources */,
 				8B40A0B91F7B1CFC00AF3B06 /* MainViewController.swift in Sources */,
 				8B40A0DD1F7B30F700AF3B06 /* MovieDetailViewController.swift in Sources */,

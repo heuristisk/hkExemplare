@@ -25,7 +25,7 @@ class Api {
         if Cache.isAvailable {
             callback(Api.MoviesResponse.sucess(movies: Variable.init(Cache.get())))
         } else {
-            MovieMDB.upcoming("9a74372440cacf0cd102b3521edbbd0c", page: 1, language: "en") { (client, data) in
+            MovieMDB.upcoming(Config.apiKey, page: 1, language: "en") { (client, data) in
 
                 if client.error != nil {
                     callback(Api.MoviesResponse.error(reason: client.error?.description ?? unknownErrorMessage))
