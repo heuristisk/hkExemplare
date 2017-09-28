@@ -29,8 +29,12 @@ class MainViewController: UITableViewController {
         self.tableView.delegate = nil
         self.tableView.dataSource = nil
 
-        loadDataSet { (_) in
-            self.setupUI()
+        loadDataSet { (success) in
+            if success {
+                self.setupUI()
+            } else {
+                //Oh shit! I need to do something...
+            }
         }
     }
 
@@ -44,7 +48,7 @@ class MainViewController: UITableViewController {
                 break
             case .error(let reason):
                 print(reason)
-                completion(true)
+                completion(false)
                 break
             }
         }
